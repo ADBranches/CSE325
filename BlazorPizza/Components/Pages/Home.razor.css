@@ -1,0 +1,12 @@
+.pizza-table {
+    margin-top: 1rem;
+}
+
+.pizza-table th {
+    background-color: #f8f9fa;
+}
+
+.lead {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}

@@ -1,0 +1,39 @@
+@page "/"
+
+<PageTitle>Edwin Kambale Pizza List</PageTitle>
+
+<h1>Blazor Pizza Menu</h1>
+
+<p class="lead">Get pizza list with prices shown in Uganda currency.</p>
+
+<table class="table table-striped pizza-table">
+    <thead>
+        <tr>
+            <th>Pizza</th>
+            <th>Description</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var pizza in pizzas)
+        {
+            <tr>
+                <td>@pizza.Name</td>
+                <td>@pizza.Description</td>
+                <td>@($"UGX {pizza.Price:N0}")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    private List<Pizza> pizzas = new()
+    {
+        new Pizza("Classic Margherita", "Tomato sauce, mozzarella, and fresh basil", 18000),
+        new Pizza("Chicken Supreme", "Chicken, green pepper, onion, and cheese", 25000),
+        new Pizza("Veggie Delight", "Mushrooms, onions, tomatoes, olives, and sweet pepper", 22000),
+        new Pizza("Beef BBQ", "Beef, BBQ sauce, onion, and mozzarella", 27000)
+    };
+
+    private record Pizza(string Name, string Description, decimal Price);
+}
