@@ -1,0 +1,7 @@
+Sales Summary
+---------------------------
+Total Sales: $0.00
+Details:
+ stores/store1/sales.json: $0.00
+ stores/store2/sales.json: $0.00
+ stores/store3/sales.json: $0.00

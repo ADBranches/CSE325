@@ -12,3 +12,4 @@
 /home/trovas/Downloads/projects/byupw/block3_2026/CSE325/CSE325/FilesAndDirectories/obj/Debug/net8.0/FilesAndDirectories.pdb
 /home/trovas/Downloads/projects/byupw/block3_2026/CSE325/CSE325/FilesAndDirectories/obj/Debug/net8.0/FilesAndDirectories.genruntimeconfig.cache
 /home/trovas/Downloads/projects/byupw/block3_2026/CSE325/CSE325/FilesAndDirectories/obj/Debug/net8.0/ref/FilesAndDirectories.dll
+/home/trovas/Downloads/projects/byupw/block3_2026/CSE325/CSE325/FilesAndDirectories/obj/Debug/net8.0/FilesAndDirectories.sourcelink.json
