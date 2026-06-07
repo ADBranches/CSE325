@@ -13,6 +13,11 @@ static void GenerateSalesSummaryReport(string rootFolder, string reportFilePath)
 
     var fileTotals = new List<(string FileName, decimal TotalSales)>();
 
+    var options = new JsonSerializerOptions
+    {
+        PropertyNameCaseInsensitive = true
+    };
+
     foreach (var file in Directory.EnumerateFiles(rootFolder, "sales.json", SearchOption.AllDirectories))
     {
         decimal fileTotal = 0;
@@ -21,7 +26,7 @@ static void GenerateSalesSummaryReport(string rootFolder, string reportFilePath)
         {
             var json = reader.ReadToEnd();
 
-            var salesData = JsonSerializer.Deserialize<SalesTotal[]>(json);
+            var salesData = JsonSerializer.Deserialize<SalesTotal[]>(json, options);
 
             if (salesData != null)
             {
