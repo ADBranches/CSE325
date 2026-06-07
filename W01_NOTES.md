@@ -252,7 +252,7 @@ Example generated report:
 ```text
 Sales Summary
 ---------------------------
-Total Sales: $1,234,567.89
+Total Sales: $1,240,567.89
 Details:
  sales.json: $123,456.78
  sales.json: $987,654.32
