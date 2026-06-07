@@ -192,7 +192,10 @@ No response body
 
 The following function generates a sales summary report file. The report includes the actual total sales from all sales files and a detailed report showing each file's total sales.
 
-```csharp
+````csharp
+using System.Text;
+using System.Text.Json;
+
 using System.Text;
 using System.Text.Json;
 
@@ -206,6 +209,11 @@ static void GenerateSalesSummaryReport(string rootFolder, string reportFilePath)
 
     var fileTotals = new List<(string FileName, decimal TotalSales)>();
 
+    var options = new JsonSerializerOptions
+    {
+        PropertyNameCaseInsensitive = true
+    };
+
     foreach (var file in Directory.EnumerateFiles(rootFolder, "sales.json", SearchOption.AllDirectories))
     {
         decimal fileTotal = 0;
@@ -214,7 +222,7 @@ static void GenerateSalesSummaryReport(string rootFolder, string reportFilePath)
         {
             var json = reader.ReadToEnd();
 
-            var salesData = JsonSerializer.Deserialize<SalesTotal[]>(json);
+            var salesData = JsonSerializer.Deserialize<SalesTotal[]>(json, options);
 
             if (salesData != null)
             {
@@ -226,7 +234,7 @@ static void GenerateSalesSummaryReport(string rootFolder, string reportFilePath)
         }
 
         grandTotal += fileTotal;
-        fileTotals.Add((Path.GetFileName(file), fileTotal));
+        fileTotals.Add((file, fileTotal));
     }
 
     reportBuilder.AppendLine($"Total Sales: {grandTotal:C}");
@@ -239,13 +247,12 @@ static void GenerateSalesSummaryReport(string rootFolder, string reportFilePath)
 
     File.WriteAllText(reportFilePath, reportBuilder.ToString());
 }
-```
 
 Example function call:
 
 ```csharp
 GenerateSalesSummaryReport("stores", "salesSummary.txt");
-```
+````
 
 Example generated report:
 
