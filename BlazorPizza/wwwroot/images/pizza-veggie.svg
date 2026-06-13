@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420" viewBox="0 0 640 420" role="img" aria-label="Veggie Delight pizza">
+  <rect width="640" height="420" fill="#fff4df"/>
+  <circle cx="320" cy="210" r="150" fill="#d9903d"/>
+  <circle cx="320" cy="210" r="130" fill="#ffe0a3"/>
+  <circle cx="260" cy="165" r="18" fill="#27ae60"/>
+  <circle cx="370" cy="150" r="18" fill="#27ae60"/>
+  <circle cx="410" cy="245" r="18" fill="#27ae60"/>
+  <circle cx="285" cy="270" r="18" fill="#27ae60"/>
+  <circle cx="330" cy="225" r="16" fill="#7f8c8d"/>
+  <circle cx="235" cy="230" r="16" fill="#7f8c8d"/>
+  <circle cx="390" cy="285" r="16" fill="#7f8c8d"/>
+  <rect x="305" y="125" width="45" height="14" rx="7" fill="#e74c3c"/>
+  <rect x="395" y="205" width="45" height="14" rx="7" fill="#e74c3c"/>
+</svg>

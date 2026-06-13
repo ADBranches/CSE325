@@ -1,12 +1,252 @@
-.pizza-table {
+.hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(260px, .7fr);
+    gap: 1.5rem;
+    align-items: stretch;
+    margin-bottom: 2rem;
+}
+
+.hero-text,
+.hero-card,
+.menu-section,
+.order-pane,
+.order-note {
+    background: white;
+    border: 1px solid #eadfce;
+    border-radius: 1.25rem;
+    box-shadow: 0 18px 40px rgba(75, 38, 0, .08);
+}
+
+.hero-text {
+    padding: 2.25rem;
+    background:
+        linear-gradient(135deg, rgba(255, 177, 59, .18), rgba(255, 255, 255, .95)),
+        white;
+}
+
+.eyebrow {
+    margin: 0 0 .4rem;
+    color: #b55200;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    font-size: .8rem;
+}
+
+.hero h1 {
+    font-size: clamp(2.2rem, 4vw, 4.5rem);
+    margin: 0 0 1rem;
+    color: #2b1200;
+}
+
+.hero p,
+.section-heading p,
+.pizza-card p,
+.empty-order span,
+.order-item span,
+.order-note li {
+    color: #5f5248;
+}
+
+.hero-button,
+.pizza-card button,
+.clear-button {
+    border: 0;
+    border-radius: .75rem;
+    padding: .8rem 1rem;
+    font-weight: 800;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.hero-button,
+.pizza-card button {
+    display: inline-block;
+    color: white;
+    background: #b55200;
+}
+
+.hero-button:hover,
+.pizza-card button:hover {
+    background: #813a00;
+}
+
+.hero-card {
+    padding: 1.5rem;
+    display: grid;
+    place-items: center;
+    text-align: center;
+}
+
+.hero-card img {
+    width: min(170px, 70%);
+    margin-bottom: 1rem;
+}
+
+.hero-card strong {
+    font-size: 1.35rem;
+    color: #2b1200;
+}
+
+.menu-section,
+.order-pane,
+.order-note {
+    padding: 1.5rem;
+}
+
+.section-heading {
+    margin-bottom: 1rem;
+}
+
+.section-heading h2 {
+    margin: 0 0 .35rem;
+    color: #2b1200;
+}
+
+.pizza-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.pizza-card {
+    overflow: hidden;
+    border: 1px solid #eadfce;
+    border-radius: 1rem;
+    background: #fffaf2;
+}
+
+.pizza-card img {
+    width: 100%;
+    height: 155px;
+    object-fit: cover;
+    display: block;
+    background: #fff4df;
+}
+
+.pizza-card-body {
+    padding: 1rem;
+}
+
+.pizza-card h3 {
+    color: #2b1200;
+    margin: 0 0 .5rem;
+}
+
+.pizza-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .75rem;
     margin-top: 1rem;
 }
 
-.pizza-table th {
-    background-color: #f8f9fa;
+.pizza-card-footer strong {
+    color: #7a1d00;
 }
 
-.lead {
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
+.order-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) minmax(280px, .7fr);
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.empty-order {
+    display: grid;
+    gap: .35rem;
+    padding: 1rem;
+    border: 2px dashed #e7be7a;
+    border-radius: 1rem;
+    background: #fff8ec;
+}
+
+.order-items {
+    display: grid;
+    gap: .8rem;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: .9rem;
+    background: #fff8ec;
+    border: 1px solid #f0dcc0;
+}
+
+.order-item div:first-child {
+    display: grid;
+    gap: .2rem;
+}
+
+.order-controls {
+    display: flex;
+    align-items: center;
+    gap: .55rem;
+}
+
+.order-controls button {
+    width: 2rem;
+    height: 2rem;
+    border: 0;
+    border-radius: 50%;
+    background: #2d004f;
+    color: white;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.order-total {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 2px solid #eadfce;
+    font-size: 1.25rem;
+}
+
+.order-total strong {
+    color: #b55200;
+}
+
+.clear-button {
+    margin-top: 1rem;
+    color: #2b1200;
+    background: #ffd89c;
+}
+
+.order-note ul {
+    padding-left: 1.2rem;
+}
+
+.order-note code {
+    color: #7a1d00;
+    font-weight: 800;
+}
+
+@media (max-width: 1150px) {
+    .pizza-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 850px) {
+    .hero,
+    .order-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 560px) {
+    .pizza-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pizza-card-footer,
+    .order-item {
+        align-items: flex-start;
+        flex-direction: column;
+    }
 }

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420" viewBox="0 0 640 420" role="img" aria-label="Classic Margherita pizza">
+  <rect width="640" height="420" fill="#fff4df"/>
+  <circle cx="320" cy="210" r="150" fill="#d9903d"/>
+  <circle cx="320" cy="210" r="130" fill="#ffe0a3"/>
+  <circle cx="260" cy="165" r="22" fill="#d64531"/>
+  <circle cx="370" cy="150" r="22" fill="#d64531"/>
+  <circle cx="410" cy="245" r="22" fill="#d64531"/>
+  <circle cx="285" cy="270" r="22" fill="#d64531"/>
+  <circle cx="335" cy="220" r="20" fill="#fff8d8"/>
+  <path d="M220 225 C250 205 275 245 240 268" stroke="#2e8b57" stroke-width="12" fill="none" stroke-linecap="round"/>
+  <path d="M375 270 C400 235 430 270 405 300" stroke="#2e8b57" stroke-width="12" fill="none" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420" viewBox="0 0 640 420" role="img" aria-label="Beef BBQ pizza">
+  <rect width="640" height="420" fill="#fff4df"/>
+  <circle cx="320" cy="210" r="150" fill="#d9903d"/>
+  <circle cx="320" cy="210" r="130" fill="#ffcf75"/>
+  <path d="M215 210 C270 155 345 260 430 155" stroke="#7b3f00" stroke-width="18" fill="none" stroke-linecap="round"/>
+  <path d="M230 270 C300 215 365 335 435 250" stroke="#7b3f00" stroke-width="18" fill="none" stroke-linecap="round"/>
+  <circle cx="270" cy="165" r="18" fill="#6e2c00"/>
+  <circle cx="360" cy="150" r="18" fill="#6e2c00"/>
+  <circle cx="410" cy="245" r="18" fill="#6e2c00"/>
+  <circle cx="290" cy="280" r="18" fill="#6e2c00"/>
+  <path d="M245 140 L430 300" stroke="#f1c40f" stroke-width="9" stroke-linecap="round"/>
+</svg>

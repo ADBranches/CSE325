@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420" viewBox="0 0 640 420" role="img" aria-label="Chicken Supreme pizza">
+  <rect width="640" height="420" fill="#fff4df"/>
+  <circle cx="320" cy="210" r="150" fill="#d9903d"/>
+  <circle cx="320" cy="210" r="130" fill="#ffd27a"/>
+  <circle cx="260" cy="165" r="18" fill="#f6c27a"/>
+  <circle cx="370" cy="160" r="18" fill="#f6c27a"/>
+  <circle cx="405" cy="245" r="18" fill="#f6c27a"/>
+  <circle cx="285" cy="270" r="18" fill="#f6c27a"/>
+  <rect x="230" y="220" width="34" height="18" rx="9" fill="#2ecc71"/>
+  <rect x="390" y="205" width="34" height="18" rx="9" fill="#2ecc71"/>
+  <rect x="315" y="120" width="34" height="18" rx="9" fill="#2ecc71"/>
+  <path d="M245 290 L430 120" stroke="#8e44ad" stroke-width="10" stroke-linecap="round" opacity=".75"/>
+</svg>

@@ -1,23 +1,31 @@
-﻿@inherits LayoutComponentBase
+@inherits LayoutComponentBase
 
-<div class="page">
-    <div class="sidebar">
+<div class="page-shell">
+    <aside class="sidebar">
         <NavMenu />
-    </div>
+    </aside>
 
-    <main>
-        <div class="top-row px-4">
-            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
-        </div>
+    <section class="main-wrapper">
+        <header class="top-row">
+            <a href="https://learn.microsoft.com/training/paths/build-web-apps-with-blazor/" target="_blank" rel="noopener noreferrer">
+                Microsoft Blazor Learning Path
+            </a>
+        </header>
 
-        <article class="content px-4">
+        <main class="content">
             @Body
-        </article>
+        </main>
 
-        <footer class="student-footer">
-            Edwin Kambale — Uganda
+        <footer class="app-footer">
+            <div>
+                <strong>Edwin Pizza App</strong>
+                <span>Fresh Blazor-built pizza ordering experience.</span>
+            </div>
+            <div>
+                Edwin Kambale — Uganda
+            </div>
         </footer>
-    </main>
+    </section>
 </div>
 
 <div id="blazor-error-ui">

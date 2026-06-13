@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 180 180" role="img" aria-label="Pizza logo">
+  <circle cx="90" cy="90" r="84" fill="#ffcc66"/>
+  <circle cx="90" cy="90" r="72" fill="#f7a928"/>
+  <path d="M90 20 A70 70 0 0 1 151 125 L90 90 Z" fill="#f2deb0"/>
+  <circle cx="108" cy="59" r="8" fill="#c0392b"/>
+  <circle cx="128" cy="93" r="8" fill="#c0392b"/>
+  <circle cx="96" cy="111" r="8" fill="#c0392b"/>
+  <path d="M83 36 L96 91 L65 76 Z" fill="#f1c40f" opacity=".85"/>
+  <text x="90" y="162" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#3a1900">Blazor Pizza</text>
+</svg>
