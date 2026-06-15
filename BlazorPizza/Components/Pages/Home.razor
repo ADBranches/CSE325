@@ -1,115 +1,81 @@
 @page "/"
 @rendermode InteractiveServer
 
-<PageTitle>Blazor Pizza Menu</PageTitle>
+<PageTitle>Blazor Pizza</PageTitle>
 
-<section class="hero">
-    <div class="hero-text">
-        <p class="eyebrow">Blazor Pizza Ordering App</p>
-        <h1>Build your pizza order</h1>
-        <p>
-            Choose a pizza from the menu, add it to the order pane, and review the total in Uganda shillings.
-        </p>
-        <a href="#menu" class="hero-button">View Pizza Menu</a>
-    </div>
-
-    <div class="hero-card">
-        <img src="images/pizza-logo.svg" alt="Blazor Pizza logo" />
-        <strong>Fresh menu</strong>
-        <span>Images, navigation, order pane, and footer included.</span>
-    </div>
-</section>
-
-<section class="menu-section" id="menu">
-    <div class="section-heading">
-        <p class="eyebrow">Menu</p>
-        <h2>Blazor Pizza Menu</h2>
-        <p>Pizza list with descriptions, images, and prices shown in Uganda currency.</p>
-    </div>
-
-    <div class="pizza-grid">
+<div class="pizza-page">
+    <section class="pizza-menu" id="menu" aria-label="Pizza menu">
         @foreach (var pizza in Pizzas)
         {
-            <article class="pizza-card">
-                <img src="@pizza.Image" alt="@($"{pizza.Name} image")" />
-                <div class="pizza-card-body">
-                    <h3>@pizza.Name</h3>
+            <article class="pizza-tile">
+                <img src="@pizza.Image" alt="@($"{pizza.Name} pizza")" />
+
+                <div class="pizza-overlay">
+                    <h2>@pizza.Name</h2>
                     <p>@pizza.Description</p>
-                    <div class="pizza-card-footer">
-                        <strong>@FormatCurrency(pizza.Price)</strong>
-                        <button type="button" @onclick="() => AddPizza(pizza)">Add to order</button>
-                    </div>
                 </div>
+
+                <button type="button" class="price-button" @onclick="() => AddPizza(pizza)">
+                    @FormatCurrency(pizza.Price)
+                </button>
             </article>
         }
-    </div>
-</section>
+    </section>
 
-<section class="order-layout" id="order">
-    <div class="order-pane">
-        <div class="section-heading">
-            <p class="eyebrow">Order Pane</p>
-            <h2>Your Order</h2>
-            <p>Add pizzas from the menu and review the running total.</p>
+    <aside class="order-pane" id="order" aria-label="Current order">
+        <div class="order-content">
+            <h1>Your Order</h1>
+
+            @if (OrderItems.Count == 0)
+            {
+                <div class="empty-order">
+                    <strong>No pizzas selected yet.</strong>
+                    <span>Choose a pizza from the menu to begin your order.</span>
+                </div>
+            }
+            else
+            {
+                <div class="order-items">
+                    @foreach (var item in OrderItems)
+                    {
+                        <div class="order-item">
+                            <div>
+                                <strong>@item.Pizza.Name</strong>
+                                <span>@item.Quantity × @FormatCurrency(item.Pizza.Price)</span>
+                            </div>
+
+                            <button type="button" title="Remove item" @onclick="() => Decrease(item.Pizza)">
+                                ×
+                            </button>
+                        </div>
+                    }
+                </div>
+            }
         </div>
 
-        @if (OrderItems.Count == 0)
-        {
-            <div class="empty-order">
-                <strong>No pizzas selected yet.</strong>
-                <span>Use the Add to order buttons above to start an order.</span>
-            </div>
-        }
-        else
-        {
-            <div class="order-items">
-                @foreach (var item in OrderItems)
-                {
-                    <div class="order-item">
-                        <div>
-                            <strong>@item.Pizza.Name</strong>
-                            <span>@item.Quantity × @FormatCurrency(item.Pizza.Price)</span>
-                        </div>
-
-                        <div class="order-controls">
-                            <button type="button" @onclick="() => Decrease(item.Pizza)">−</button>
-                            <span>@item.Quantity</span>
-                            <button type="button" @onclick="() => AddPizza(item.Pizza)">+</button>
-                        </div>
-                    </div>
-                }
-            </div>
-
-            <div class="order-total">
-                <span>Total</span>
+        <div class="order-footer">
+            <div class="total-line">
+                <span>Total:</span>
                 <strong>@FormatCurrency(OrderTotal)</strong>
             </div>
 
-            <button type="button" class="clear-button" @onclick="ClearOrder">
-                Clear order
+            <button type="button" class="order-button" disabled="@(OrderItems.Count == 0)">
+                Order &gt;
             </button>
-        }
-    </div>
-
-    <aside class="order-note" id="about">
-        <h2>About this assignment fix</h2>
-        <ul>
-            <li>Navigation menu uses Blazor <code>NavLink</code>.</li>
-            <li>Logo image is displayed in the sidebar and browser tab.</li>
-            <li>Pizza images are loaded from <code>wwwroot/images</code>.</li>
-            <li>Order pane uses Blazor event handling.</li>
-            <li>Footer is provided through the shared layout.</li>
-        </ul>
+        </div>
     </aside>
-</section>
+</div>
 
 @code {
     private readonly List<Pizza> Pizzas =
     [
-        new("Classic Margherita", "Tomato sauce, mozzarella, and fresh basil.", 18000, "images/pizza-margherita.svg"),
-        new("Chicken Supreme", "Chicken, green pepper, onion, and cheese.", 25000, "images/pizza-chicken.svg"),
-        new("Veggie Delight", "Mushrooms, onions, tomatoes, olives, and sweet pepper.", 22000, "images/pizza-veggie.svg"),
-        new("Beef BBQ", "Beef, BBQ sauce, onion, and mozzarella.", 27000, "images/pizza-bbq.svg")
+        new("Buffalo Chicken", "Spicy chicken, hot sauce, and bleu cheese.", 12750, "images/pizza-chicken.svg"),
+        new("The Baconatorizor", "A smoky BBQ pizza loaded with beef and cheese.", 11990, "images/pizza-bbq.svg"),
+        new("Veggie Delight", "Mushrooms, onions, tomatoes, olives, and sweet pepper.", 11500, "images/pizza-veggie.svg"),
+        new("Mushroom Lovers", "Mushrooms, mozzarella, and rich tomato sauce.", 11000, "images/pizza-veggie.svg"),
+        new("Classic Pepperoni", "The pizza you grew up with, but Blazing hot.", 10500, "images/pizza-bbq.svg"),
+        new("Basic Cheese Pizza", "Cheesy, simple, and delicious.", 9990, "images/pizza-margherita.svg"),
+        new("Margherita", "Traditional Italian pizza with tomatoes and basil.", 9990, "images/pizza-margherita.svg")
     ];
 
     private readonly List<OrderItem> OrderItems = [];
@@ -148,8 +114,6 @@
             OrderItems.Remove(existingItem);
         }
     }
-
-    private void ClearOrder() => OrderItems.Clear();
 
     private sealed record Pizza(string Name, string Description, decimal Price, string Image);
 

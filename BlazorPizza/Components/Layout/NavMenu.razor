@@ -1,31 +1,17 @@
-<div class="brand-box">
-    <a class="brand-link" href="">
-        <img src="images/pizza-logo.svg" alt="Blazor Pizza logo" class="brand-logo" />
-        <span class="brand-name">Edwin Pizza App</span>
+<header class="pizza-nav">
+    <a class="brand-area" href="">
+        <img src="images/pizza-logo.svg" alt="Blazor Pizza logo" />
     </a>
-</div>
 
-<input type="checkbox" title="Navigation menu" class="navbar-toggler" />
+    <nav class="nav-actions" aria-label="Pizza app navigation">
+        <a class="nav-action active" href="#menu">
+            <span class="nav-action-icon">🍕</span>
+            <span>GET PIZZA</span>
+        </a>
 
-<nav class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
-    <div class="nav-item">
-        <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-            <span class="nav-icon">🍕</span>
-            <span>Pizza Menu</span>
-        </NavLink>
-    </div>
-
-    <div class="nav-item">
-        <NavLink class="nav-link" href="#order">
-            <span class="nav-icon">🧾</span>
-            <span>Order Pane</span>
-        </NavLink>
-    </div>
-
-    <div class="nav-item">
-        <NavLink class="nav-link" href="#about">
-            <span class="nav-icon">ℹ️</span>
-            <span>About</span>
-        </NavLink>
-    </div>
-</nav>
+        <a class="nav-action" href="#order">
+            <span class="nav-action-icon">🧾</span>
+            <span>MY ORDERS</span>
+        </a>
+    </nav>
+</header>

@@ -1,66 +1,30 @@
-.page-shell {
+.app-shell {
     min-height: 100vh;
     display: flex;
-    background: #fff8ef;
-}
-
-.sidebar {
-    width: 270px;
-    flex-shrink: 0;
-    background: linear-gradient(180deg, #2d004f 0%, #520057 55%, #7a1d00 100%);
-    color: white;
-    box-shadow: 8px 0 30px rgba(0, 0, 0, .12);
-}
-
-.main-wrapper {
-    min-width: 0;
-    flex: 1;
-    display: flex;
     flex-direction: column;
+    background: #eeeeee;
 }
 
-.top-row {
-    height: 4rem;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 0 2rem;
-    background: white;
-    border-bottom: 1px solid #eadfce;
-}
-
-.top-row a {
-    color: #7a1d00;
-    font-weight: 700;
-    text-decoration: none;
-}
-
-.content {
+.app-main {
     flex: 1;
-    padding: 2rem;
+    min-width: 0;
 }
 
 .app-footer {
+    background: #242424;
+    color: #f8f8f8;
+    padding: .9rem 1.5rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     gap: 1rem;
-    padding: 1.25rem 2rem;
-    background: #22110a;
-    color: #ffe7bf;
-    border-top: 4px solid #ffb13b;
+    font-weight: 700;
+    border-top: 4px solid #d83333;
 }
 
-.app-footer div {
-    display: flex;
-    flex-direction: column;
-}
-
-.app-footer span {
-    color: #f6cf97;
-}
-
-.not-found-page {
-    padding: 2rem;
+.app-footer span:first-child::after {
+    content: "|";
+    margin-left: 1rem;
+    color: #cccccc;
 }
 
 #blazor-error-ui {
@@ -83,24 +47,6 @@
     top: .5rem;
 }
 
-@media (max-width: 850px) {
-    .page-shell {
-        flex-direction: column;
-    }
-
-    .sidebar {
-        width: 100%;
-    }
-
-    .top-row {
-        justify-content: center;
-    }
-
-    .content {
-        padding: 1rem;
-    }
-
-    .app-footer {
-        flex-direction: column;
-    }
+.not-found-page {
+    padding: 2rem;
 }
